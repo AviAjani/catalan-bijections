@@ -1,0 +1,10 @@
+Catalan Bijections
+
+This project depends on mathlib and its transitive dependencies. Their original
+licenses and attribution notices remain in those packages and are not replaced
+by this repository's license.
+
+The mathematical results developed here are classical. In particular, mathlib's
+Catalan and DyckWord modules already formalize Catalan counting and an abstract
+tree/Dyck-word bijection. See the pinned source links and the dependency boundary
+in README.md.

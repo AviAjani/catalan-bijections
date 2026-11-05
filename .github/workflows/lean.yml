@@ -1,0 +1,30 @@
+name: Lean
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64 # v1
+        with:
+          auto-config: false
+          build: true
+          build-args: "--wfail"
+          use-mathlib-cache: true
+      - name: Audit project axioms
+        run: lake env lean Audit.lean
+      - name: Run executable examples
+        run: |
+          lake exe catalan-demo
+          lake exe catalan-demo parse '(())'
+          if lake exe catalan-demo parse '())('; then
+            exit 1
+          fi

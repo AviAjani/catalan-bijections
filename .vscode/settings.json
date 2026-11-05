@@ -1,0 +1,7 @@
+{
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "editor.tabSize": 2,
+  "editor.rulers": [100],
+  "lean4.automaticallyBuildDependencies": true
+}

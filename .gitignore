@@ -1,0 +1,9 @@
+/.lake/
+/build/
+*.olean
+*.ilean
+*.olean.hash
+*.ilean.hash
+*.trace
+.DS_Store
+Thumbs.db
